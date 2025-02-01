@@ -28,12 +28,12 @@ class Db:
 
   # Function to load SQL from a file
   def sql(self, filepath):
-    with open('sql/' + filepath, 'r') as file:
+    with open('sql/' + filepath, 'r', encoding="cp437") as file:
       return file.read()
 
   # Function to load the words from a JSON file
   def load_json(self, filepath):
-    with open(filepath, 'r') as file:
+    with open(filepath, 'r', encoding="cp437") as file:
       return json.load(file)
 
   def setup_tables(self,cursor):
