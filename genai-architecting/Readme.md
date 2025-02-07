@@ -6,6 +6,10 @@ Proposed architecture leverages AWS Cloud services, Serverless approach, specifi
 
 The system ensures structured input validation, controlled responses, and efficient document-based knowledge retrieval.
 
+## Logical Architecture diagram
+
+![Logical Architecture diagram](https://github.com/dmytro-dolzhenko/free-genai-bootcamp-2025/blob/main/genai-architecting/genai-architecture.drawio.png)
+
 ## Workflow
 
 1. **Document Upload & Processing**
