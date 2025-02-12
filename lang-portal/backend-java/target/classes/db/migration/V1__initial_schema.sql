@@ -58,6 +58,13 @@ CREATE TABLE IF NOT EXISTS word_review_items (
     FOREIGN KEY (study_session_id) REFERENCES study_sessions(id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS word_groups (
+  word_id INTEGER NOT NULL,
+  group_id INTEGER NOT NULL,
+  FOREIGN KEY (word_id) REFERENCES words(id),
+  FOREIGN KEY (group_id) REFERENCES groups(id)
+);
+
 -- Create indexes for better performance
 CREATE INDEX IF NOT EXISTS idx_words_kanji ON words (kanji);
 CREATE INDEX IF NOT EXISTS idx_words_romaji ON words (romaji);

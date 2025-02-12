@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface WordReviewItemRepository extends JpaRepository<WordReviewItem, Long> {
     List<WordReviewItem> findByWordId(Long wordId);
-    List<WordReviewItem> findByStudySessionId(Long sessionId);
-    Page<WordReviewItem> findByWordIdOrderByCreatedAtDesc(Long wordId, Pageable pageable);
+    Page<WordReviewItem> findByWordIdOrderByReviewedAtDesc(Long wordId, Pageable pageable);
+    List<WordReviewItem> findBySessionIdOrderByReviewedAtDesc(Long sessionId);
 }

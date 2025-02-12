@@ -13,22 +13,15 @@ public class WordReviewItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "word_id", nullable = false)
-    private Word word;
+    @Column(name = "word_id", nullable = false)
+    private Long wordId;
 
-    @ManyToOne
-    @JoinColumn(name = "study_session_id", nullable = false)
-    private StudySession studySession;
+    @Column(name = "session_id", nullable = false)
+    private Long sessionId;
 
     @Column(nullable = false)
     private Boolean correct;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
+    @Column(name = "reviewed_at", nullable = false)
+    private LocalDateTime reviewedAt;
 }

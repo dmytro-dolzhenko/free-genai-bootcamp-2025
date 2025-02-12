@@ -1,0 +1,6 @@
+com\langportal\controller\StudyActivityControllerTest.class
+com\langportal\controller\DashboardControllerTest.class
+com\langportal\controller\GroupControllerTest.class
+com\langportal\controller\WordReviewControllerTest.class
+com\langportal\controller\StudySessionControllerTest.class
+com\langportal\controller\WordControllerTest.class

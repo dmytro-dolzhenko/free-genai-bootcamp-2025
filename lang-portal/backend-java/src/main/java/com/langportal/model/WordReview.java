@@ -13,15 +13,14 @@ public class WordReview {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "word_id", nullable = false)
-    private Word word;
+    @Column(name = "word_id", nullable = false)
+    private Long wordId;
 
     @Column(name = "correct_count")
-    private Integer correctCount = 0;
+    private Integer correctCount;
 
-    @Column(name = "wrong_count")
-    private Integer wrongCount = 0;
+    @Column(name = "total_count")
+    private Integer totalCount;
 
     @Column(name = "last_reviewed")
     private LocalDateTime lastReviewed;

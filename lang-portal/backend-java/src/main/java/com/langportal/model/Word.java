@@ -1,7 +1,9 @@
 package com.langportal.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "words")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Word {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
