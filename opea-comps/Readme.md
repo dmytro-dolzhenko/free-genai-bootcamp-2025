@@ -82,7 +82,7 @@ curl http://localhost:8008/api/tags
 ### Chat Question Endpoint
 Chat Question endpoint can be used in the following way:
 ```bash
-curl -X POST -H 'Content-Type: application/json' -d '{"messages": "Why the sky is blue?"}' http://localhost:8000/v1/chat/completions
+curl -X POST -H 'Content-Type: application/json' -d '{"messages": "Why the sky is blue?"}' http://localhost:8000/v1/chat/question
 ```
 
 ## Usage
