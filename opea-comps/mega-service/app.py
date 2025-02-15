@@ -22,13 +22,13 @@ class MegaService:
         )
         self.megaservice.add(llm)
 
-    def handle_request(self, request: dict) -> TextDoc:
+    async def handle_request(self, request: dict) -> TextDoc:
         response_message = f"Received: {request}"
         print(response_message)
 
         try:
             print(self.megaservice.services)
-            result_dict, runtime_graph = self.megaservice.schedule(
+            result_dict, runtime_graph = await self.megaservice.schedule(
                 initial_inputs={"text": request['messages']},
                 service_name="opea_service@text_generation_ollama",
             )
