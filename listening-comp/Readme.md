@@ -144,6 +144,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - ChromaDB
 - Streamlit
 - YouTube Data API credentials
+- ffmpeg (required for audio processing)
 
 ## Configuration
 
@@ -199,3 +200,34 @@ For support, please open an issue in the GitHub repository or contact the mainta
 - [ ] Add progress tracking
 - [ ] Expand question patterns
 - [ ] Improve question generation quality
+
+## Installing ffmpeg
+
+### Ubuntu/Debian
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+### Windows
+1. Download ffmpeg from https://www.gyan.dev/ffmpeg/builds/
+2. Download "ffmpeg-release-essentials.zip"
+3. Extract to a location (e.g., C:\ffmpeg)
+4. Add the bin folder (C:\ffmpeg\bin) to your system's PATH:
+   - Open System Properties > Advanced > Environment Variables
+   - Under System Variables, find and select "Path"
+   - Click Edit > New
+   - Add the path to ffmpeg bin folder (e.g., C:\ffmpeg\bin)
+   - Click OK on all windows
+5. Restart your terminal/IDE
+
+### macOS
+```bash
+brew install ffmpeg
+```
+
+Verify installation by running:
+```bash
+ffmpeg -version
+```
+

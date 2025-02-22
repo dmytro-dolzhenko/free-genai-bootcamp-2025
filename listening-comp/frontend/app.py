@@ -6,10 +6,12 @@ import os
 from typing import List, Dict
 import boto3
 from uuid import uuid4
+import random
 
 # Add backend to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'backend'))
 from transcript_analyzer import TranscriptAnalyzer
+from audio_generator import AudioGenerator
 
 class JLPTPracticeApp:
     def __init__(self):
@@ -30,6 +32,7 @@ class JLPTPracticeApp:
             region_name='eu-west-1'
         )
         self.analyzer = TranscriptAnalyzer(region_name="eu-west-1", model_id="mistral.mistral-large-2402-v1:0")
+        self.audio_generator = AudioGenerator(region_name="eu-west-1")
         
     def get_categories(self) -> List[str]:
         """Get unique categories from ChromaDB"""
@@ -113,222 +116,120 @@ class JLPTPracticeApp:
             st.error(f"Error getting patterns: {str(e)}")
             return []
 
-    def get_similar_questions(self, pattern: str, topic: str, n_results: int = 3) -> List[Dict]:
-        """Get similar questions from ChromaDB using pattern matching"""
-        if not self.collection:
-            return []
-        
+    def generate_similar_question(self, patterns: List[str], topic: str, section_name: str = "") -> Dict:
+        """Generate a similar question based on patterns."""
         try:
-            # Create query text combining pattern and topic
-            query_text = f"Pattern: {pattern}\nTopic: {topic}"
-            
-            # Search for similar questions
+            # Get similar patterns from the collection
             results = self.collection.query(
-                query_texts=[query_text],
-                where={
-                    "$and": [
-                        {"content_type": {"$eq": "question"}},
-                        {"topic": {"$eq": topic}}
-                    ]
-                },
-                n_results=n_results,
-                include=['documents', 'metadatas']
+                query_texts=[f"pattern:{pattern}" for pattern in patterns],
+                n_results=5,
+                where={"topic": topic} if topic else None
             )
             
-            similar_questions = []
-            for doc, meta in zip(results['documents'][0], results['metadatas'][0]):
-                # Parse the document text to extract question components
-                lines = doc.split('\n')
-                question_dict = {
-                    'question_text': next((l.replace('Question: ', '') for l in lines if l.startswith('Question: ')), ''),
-                    'context': next((l.replace('Context: ', '') for l in lines if l.startswith('Context: ')), ''),
-                    'pattern': meta.get('pattern', pattern),
-                    'answer_options': [l.strip() for l in lines if l.startswith('Options:')][0].split('\n'),
-                    'correct_answer': next((l.replace('Correct Answer: ', '') for l in lines if l.startswith('Correct Answer: ')), '')
-                }
-                similar_questions.append(question_dict)
+            if not results or not results['documents']:
+                st.error("No similar patterns found")
+                return None
             
-            return similar_questions
-        except Exception as e:
-            st.error(f"Error getting similar questions: {str(e)}")
-            return []
-
-    def generate_similar_question(self, pattern: str, topic: str, section_name: str = "") -> Dict:
-        """Generate a new question using pattern and similar examples"""
-        try:
-            # Get similar questions from ChromaDB
-            similar_questions = self.get_similar_questions(pattern, topic)
+            # Select a random pattern from results
+            pattern_idx = random.randint(0, len(results['documents'][0]) - 1)
+            pattern = results['documents'][0][pattern_idx]
             
-            # Create examples string
-            examples = ""
-            if similar_questions:
-                examples = "Here are some example questions with this pattern:\n"
-                for i, q in enumerate(similar_questions, 1):
-                    examples += f"""
-                    Example {i}:
-                    Context: {q['context']}
-                    Question: {q['question_text']}
-                    Options: {', '.join(q['answer_options'])}
-                    Correct Answer: {q['correct_answer']}
-                    """
-            
-            # Create base prompt
-            base_prompt = f"""
-            Generate a new JLPT practice question similar to this pattern: {pattern}
+            # Generate prompt for the LLM
+            prompt = f"""You are a JLPT question generator. Create a new listening comprehension question in JSON format.
+            Follow this pattern exactly: {pattern}
             Topic: {topic}
             Section: {section_name}
-            
-            {examples}
-            """
-            
-            # Add section-specific JSON structure
-            if "Information/Monologue" in section_name:
-                json_structure = """
-                {
-                    "monologue": {
-                        "speaker": "田中太郎 (Tanaka Taro)",
-                        "text": "A longer monologue in Japanese about a topic, announcement, or explanation"
-                    },
-                    "question_text": "Japanese question text about the monologue",
-                    "answer_options": [
-                        "Japanese option 1",
-                        "Japanese option 2",
-                        "Japanese option 3",
-                        "Japanese option 4"
-                    ],
-                    "correct_answer": "The correct Japanese option",
-                    "explanation": "Explanation in English why this is the correct answer"
-                }
-                """
-            elif "Quick Response" in section_name:
-                json_structure = """
-                {
-                    "conversation": [
-                        {"speaker": "田中太郎 (Tanaka Taro)", "text": "Short question in Japanese"},
-                        {"speaker": "山本さくら (Yamamoto Sakura)", "text": "Quick response in Japanese"}
-                    ],
-                    "question_text": "Japanese question about the quick response",
-                    "answer_options": [
-                        "Japanese option 1",
-                        "Japanese option 2",
-                        "Japanese option 3",
-                        "Japanese option 4"
-                    ],
-                    "correct_answer": "The correct Japanese option",
-                    "explanation": "Explanation in English why this is the correct answer"
-                }
-                """
-            else:
-                json_structure = """
-                {
-                    "conversation": [
-                        {"speaker": "田中太郎 (Tanaka Taro)", "text": "First line of dialogue in Japanese"},
-                        {"speaker": "山本さくら (Yamamoto Sakura)", "text": "Second line of dialogue in Japanese"},
-                        {"speaker": "田中太郎 (Tanaka Taro)", "text": "Third line of dialogue in Japanese"},
-                        {"speaker": "山本さくら (Yamamoto Sakura)", "text": "Fourth line of dialogue in Japanese"}
-                    ],
-                    "question_text": "Japanese question text about the conversation",
-                    "answer_options": [
-                        "Japanese option 1",
-                        "Japanese option 2",
-                        "Japanese option 3",
-                        "Japanese option 4"
-                    ],
-                    "correct_answer": "The correct Japanese option",
-                    "explanation": "Explanation in English why this is the correct answer"
-                }
-                """
-            
-            # Add names list and requirements
-            prompt = base_prompt + """
-            Use random names from these common Japanese names (include both kanji and romaji):
-            Male names:
-            - 田中太郎 (Tanaka Taro)
-            - 鈴木一郎 (Suzuki Ichiro)
-            - 佐藤健 (Sato Ken)
-            - 山田翔太 (Yamada Shota)
-            - 中村勇気 (Nakamura Yuki)
-            
-            Female names:
-            - 山本さくら (Yamamoto Sakura)
-            - 高橋美咲 (Takahashi Misaki)
-            - 渡辺花子 (Watanabe Hanako)
-            - 小林愛 (Kobayashi Ai)
-            - 伊藤優子 (Ito Yuko)
 
-            Return a valid JSON object with exactly this structure:
-            """ + json_structure + """
+            Return ONLY valid JSON with no additional text. Use ONLY these character names consistently:
+            - 田中先生 (Tanaka Sensei) for teacher/announcer
+            - 田中太郎 (Tanaka Taro) for male student/customer
+            - 山本さくら (Yamamoto Sakura) for female student/customer
 
-            Important:
-            1. Make sure to return VALID JSON with correct formatting and escaping
-            2. Do not include any additional text before or after the JSON
-            3. Use proper JSON syntax with double quotes for strings
-            4. Use appropriate JLPT N5 level vocabulary and grammar
-            5. Choose appropriate names from the provided lists
-            6. For Section 2 (Quick Response), use short question-answer exchanges
-            7. For Section 3, ensure natural dialogue flow
-            8. For Section 4 (Monologue), focus on announcements or explanations
-            """
+            Following this structure:
+
+            For Section 1 (Task-based Comprehension):
+            {{
+                "conversation": [
+                    {{"speaker": "田中先生 (Tanaka Sensei)", "text": "日本語のタスクや状況の説明"}},
+                    {{"speaker": "田中太郎 (Tanaka Taro)", "text": "タスクについての質問"}},
+                    {{"speaker": "田中先生 (Tanaka Sensei)", "text": "選択肢の説明"}}
+                ],
+                "question_text": "状況に合った適切な行動や答えを選んでください",
+                "answer_options": ["図書館で本を借りる", "先生に質問する", "友達と相談する", "家で勉強する"],
+                "correct_answer": "図書館で本を借りる",
+                "explanation": "Explanation in English"
+            }}
+
+            For Sections 2-3 (Dialog/Conversation):
+            {{
+                "conversation": [
+                    {{"speaker": "田中太郎 (Tanaka Taro)", "text": "日本語の会話"}},
+                    {{"speaker": "山本さくら (Yamamoto Sakura)", "text": "日本語の返事"}}
+                ],
+                "question_text": "日本語の質問",
+                "answer_options": ["はい、そうです", "いいえ、違います", "わかりません", "もう一度お願いします"],
+                "correct_answer": "はい、そうです",
+                "explanation": "Explanation in English"
+            }}
+
+            For Section 4 (Information/Monologue):
+            {{
+                "monologue": {{
+                    "speaker": "田中先生 (Tanaka Sensei)",
+                    "text": "日本語のお知らせや説明"
+                }},
+                "question_text": "お知らせの内容について質問",
+                "answer_options": ["午前十時から", "図書館で", "三年生の教室で", "来週の月曜日に"],
+                "correct_answer": "図書館で",
+                "explanation": "Explanation in English"
+            }}"""
+            
+            # Call Bedrock to generate the question
+            response = self.analyzer.analyze_transcript(prompt)
             
             try:
-                response = self.analyzer._invoke_bedrock(prompt)
-                if isinstance(response, dict) and 'choices' in response:
-                    response = response['choices'][0]['message']['content']
+                # Parse the response
+                question = json.loads(response)
                 
-                # Clean up response
-                response = response.strip()
-                if response.startswith('```json'):
-                    response = response[7:]
-                if response.endswith('```'):
-                    response = response[:-3]
-                response = response.strip()
-                
-                # Parse JSON with error handling
-                try:
-                    question = json.loads(response)
-                    
-                    # Define required fields based on section type
-                    if "Information/Monologue" in section_name:
-                        required_fields = ['monologue', 'question_text', 'answer_options', 'correct_answer', 'explanation']
-                    else:
-                        required_fields = ['conversation', 'question_text', 'answer_options', 'correct_answer', 'explanation']
-                    
-                    # Validate required fields
-                    if all(field in question for field in required_fields):
-                        # Additional validation for conversation/monologue structure
-                        if "Information/Monologue" in section_name:
-                            if not isinstance(question['monologue'], dict) or \
-                               'speaker' not in question['monologue'] or \
-                               'text' not in question['monologue']:
-                                st.error("Invalid monologue structure")
-                                return None
-                        else:
-                            if not isinstance(question['conversation'], list) or \
-                               not all('speaker' in line and 'text' in line for line in question['conversation']):
-                                st.error("Invalid conversation structure")
-                                return None
-                        
-                        # Validate answer options
-                        if not isinstance(question['answer_options'], list) or \
-                           len(question['answer_options']) < 2:
-                            st.error("Invalid answer options")
+                # Validate required fields
+                required_fields = ['question_text', 'answer_options', 'correct_answer', 'explanation']
+                if all(field in question for field in required_fields):
+                    if "Section 4" in section_name:
+                        # Handle Section 4 as monologue
+                        if not isinstance(question.get('monologue'), dict) or \
+                           'speaker' not in question['monologue'] or \
+                           'text' not in question['monologue']:
+                            st.error("Invalid monologue structure")
                             return None
-                        
+                        try:
+                            audio_path = self.audio_generator.generate_conversation_audio({
+                                "monologue": question["monologue"]
+                            })
+                            question["audio_path"] = audio_path
+                        except Exception as e:
+                            st.warning(f"Audio generation failed: {str(e)}")
                         return question
                     else:
-                        missing = [f for f in required_fields if f not in question]
-                        st.error(f"Generated question is missing required fields: {', '.join(missing)}")
-                        st.code(response)  # Display the problematic response
-                        return None
-                    
-                except json.JSONDecodeError as e:
-                    st.error(f"Invalid JSON response: {str(e)}")
-                    st.code(response)  # Display the problematic response
+                        # Handle other sections as conversations
+                        if not isinstance(question.get('conversation'), list) or \
+                           not all('speaker' in line and 'text' in line for line in question['conversation']):
+                            st.error("Invalid conversation structure")
+                            return None
+                        try:
+                            audio_path = self.audio_generator.generate_conversation_audio({
+                                "conversation": question["conversation"]
+                            })
+                            question["audio_path"] = audio_path
+                        except Exception as e:
+                            st.warning(f"Audio generation failed: {str(e)}")
+                        return question
+                else:
+                    st.error("Generated question is missing required fields")
                     return None
                     
-            except Exception as e:
-                st.error(f"Error in API response: {str(e)}")
-                st.code(prompt)  # Display the prompt that caused the error
+            except json.JSONDecodeError:
+                st.error("Invalid JSON response from LLM")
+                st.write("Response:", response)  # Debug print
                 return None
             
         except Exception as e:
@@ -381,7 +282,7 @@ class JLPTPracticeApp:
                         
                         if tab_id not in st.session_state:
                             question = self.generate_similar_question(
-                                pattern, 
+                                pattern_group['patterns'], 
                                 selected_category,
                                 section_name=pattern_group['name']
                             )
@@ -400,6 +301,10 @@ class JLPTPracticeApp:
                                 st.subheader("Conversation")
                                 for line in question['conversation']:
                                     st.markdown(f"**{line['speaker']}**: {line['text']}")
+                            
+                            # Display audio player if audio was generated
+                            if "audio_path" in question:
+                                st.audio(question["audio_path"])
                             
                             # Display question
                             st.subheader("Question")  # Changed from 問題
@@ -427,9 +332,15 @@ class JLPTPracticeApp:
                                 st.info(f"Explanation: {question['explanation']}")
                             
                             # Generate new question button
-                            if st.button("New Question", key=new_key):  # Changed from 新しい問題
+                            if st.button("New Question", key=new_key):
+                                # Use the same tab_id that we used for initialization
+                                # Clear the old question
+                                st.session_state.pop(tab_id, None)  # Use tab_id directly, not state_key
+                                # Generate new question
                                 st.session_state[tab_id] = self.generate_similar_question(
-                                    pattern, selected_category, pattern_group['name']
+                                    pattern_group['patterns'], 
+                                    selected_category, 
+                                    section_name=pattern_group['name']
                                 )
                                 st.rerun()
 
