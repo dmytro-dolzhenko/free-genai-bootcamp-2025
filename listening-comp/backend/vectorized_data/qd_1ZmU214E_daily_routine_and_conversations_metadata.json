@@ -1,0 +1,19 @@
+{
+  "video_id": "qd_1ZmU214E",
+  "topic": "Daily Routine and Conversations",
+  "introduction": {
+    "greeting": "日本語能力試験町会N5これからN5の町会試験を始めます",
+    "lesson_overview": "The test covers various daily routine conversations and comprehension questions",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では初めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでくださいでは始めます",
+    "example_segment": "",
+    "main_segment": "男の人と女の人が話しています女の人は何を出しますかすみませんお茶をくださいはいお茶ですあとケーキもくださいあすみませんケーキはもうないんですけどサンドイッチはいかがでしょうかじゃあそれでいいです女の人は何を出しますか"
+  },
+  "total_questions": 2,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "video_id": "TT0ftOPqLT8",
+  "topic": "Daily Routine and Social Interactions",
+  "introduction": {
+    "greeting": "No explicit greeting provided in the transcript",
+    "lesson_overview": "The transcript covers various daily routine activities and social interactions such as studying, visiting a park, watching movies, and conversations about family and friends.",
+    "target_audience": "Not specified in the transcript"
+  },
+  "full_conversation": {
+    "opening_segment": "The transcript starts with instructions for the first question, asking the listener to first listen to a question, then listen to the conversation, and choose the correct answer from options 1 to 4.",
+    "example_segment": "No example question and explanation provided in the transcript",
+    "main_segment": "The transcript contains multiple questions related to daily routines and social interactions, with each question having a conversation or context provided for the listener to choose the correct answer."
+  },
+  "total_questions": 7,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

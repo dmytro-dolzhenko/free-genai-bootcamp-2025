@@ -1,0 +1,19 @@
+{
+  "video_id": "1z3-CWWA20Y",
+  "topic": "Daily Routine and Directions",
+  "introduction": {
+    "greeting": "これからN5の朝会試験を始めます",
+    "lesson_overview": "The test consists of multiple listening comprehension questions related to daily routines and directions.",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では始めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでくださいでは始めます",
+    "example_segment": "",
+    "main_segment": "1番教室で先生が話しています学生は明日の朝どこで先生に会いますか...6番男の人と女の人が話しています女の人は何を持っていきますか"
+  },
+  "total_questions": 3,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

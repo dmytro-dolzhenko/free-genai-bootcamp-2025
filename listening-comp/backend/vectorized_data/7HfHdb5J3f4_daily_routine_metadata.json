@@ -1,0 +1,19 @@
+{
+  "video_id": "7HfHdb5J3f4",
+  "topic": "Daily Routine",
+  "introduction": {
+    "greeting": "朝会これからN5の朝会試験を始めます",
+    "lesson_overview": "問題用紙を開けてください問題1では初めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでください",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "では練習しましょう例：家で女の人が男の人と話しています女の人は男の人に何を出しますか",
+    "example_segment": "今日は寒いですね温かいものを飲みませんかありがとうございますコーヒー紅茶あとお茶もありますけどじゃあ紅茶をお願いします砂糖やミルクは入れますかあはいのは男の人に何を出しますか1番いいものは3番です",
+    "main_segment": "1番デパートで男の人と店の人が話しています男の人はどこへ行きますかあのすみませんお手洗いはどこですかお手洗いはあちらの階段の横にございます鞄売り場の向こうですねええわかりましたどうも男の人はどこへ行きますか"
+  },
+  "total_questions": 1,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

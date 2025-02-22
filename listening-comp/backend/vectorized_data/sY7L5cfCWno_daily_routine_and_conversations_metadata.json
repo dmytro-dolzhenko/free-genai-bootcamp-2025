@@ -1,0 +1,19 @@
+{
+  "video_id": "sY7L5cfCWno",
+  "topic": "Daily Routine and Conversations",
+  "introduction": {
+    "greeting": "朝会これからN5の懲戒試験を始めます",
+    "lesson_overview": "The test will cover various daily routine conversations and scenarios",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では初めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでください",
+    "example_segment": "例: 家で女の人が男の人と話しています女の人は男の人に何を出しますか",
+    "main_segment": "1番デパートで男の人と店の人が話しています男の人はどこへ行きますか"
+  },
+  "total_questions": 2,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

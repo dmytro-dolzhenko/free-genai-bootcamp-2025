@@ -1,0 +1,13 @@
+[
+  {
+    "content_type": "pattern",
+    "video_id": "TT0ftOPqLT8",
+    "section_name": "Listening Comprehension",
+    "question_type": "Multiple Choice",
+    "patterns": [
+      "Question about a person's activity, location, or relationship, followed by a conversation providing context",
+      "Question about a specific phrase or expression used in a situation, followed by an image or context"
+    ],
+    "topic": "Daily Routine and Social Interactions"
+  }
+]

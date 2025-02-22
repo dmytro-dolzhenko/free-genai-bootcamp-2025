@@ -1,0 +1,19 @@
+[
+  {
+    "content_type": "question",
+    "video_id": "7HfHdb5J3f4",
+    "topic": "Daily Routine",
+    "section_name": "Listening Comprehension",
+    "question_type": "multiple-choice",
+    "question_text": "男の人はどこへ行きますか",
+    "context": "デパートで男の人と店の人が話しています",
+    "pattern": "AとBが会話をしている。AがBに行く場所を聞いている。",
+    "answer_options": [
+      "お手洗い",
+      "鞄売り場",
+      "階段",
+      "階段の向こう"
+    ],
+    "correct_answer": "お手洗い"
+  }
+]

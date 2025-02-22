@@ -1,0 +1,47 @@
+[
+  {
+    "content_type": "question",
+    "video_id": "1z3-CWWA20Y",
+    "topic": "Daily Routine and Directions",
+    "section_name": "Listening Comprehension",
+    "question_type": "multiple-choice",
+    "question_text": "学生は明日の朝どこで先生に会いますか",
+    "context": "教室で先生が話しています",
+    "pattern": "AはBに対してCを行うためにどこで会いますか",
+    "answer_options": [
+      "学校に来てから行きますか",
+      "駅に来てください8時半に待っています"
+    ],
+    "correct_answer": "駅に来てください8時半に待っています"
+  },
+  {
+    "content_type": "question",
+    "video_id": "1z3-CWWA20Y",
+    "topic": "Daily Routine and Directions",
+    "section_name": "Listening Comprehension",
+    "question_type": "multiple-choice",
+    "question_text": "男の学生は椅子をどこに置きますか",
+    "context": "学校で男の学生と女の先生が話しています",
+    "pattern": "AはBをCにどこに置きますか",
+    "answer_options": [
+      "机の左側に置いてください",
+      "窓のそばです"
+    ],
+    "correct_answer": "机の左側に置いてください"
+  },
+  {
+    "content_type": "question",
+    "video_id": "1z3-CWWA20Y",
+    "topic": "Daily Routine and Directions",
+    "section_name": "Listening Comprehension",
+    "question_type": "multiple-choice",
+    "question_text": "桜ビルはどこですか",
+    "context": "女の人が男の人に道を聞いています",
+    "pattern": "AはBを探してCにどこですかと聞きます",
+    "answer_options": [
+      "この道をまっすぐ行ってくださいあそこに大きいデパートがありますねその向こうです",
+      "この道の右側です"
+    ],
+    "correct_answer": "この道をまっすぐ行ってくださいあそこに大きいデパートがありますねその向こうです"
+  }
+]

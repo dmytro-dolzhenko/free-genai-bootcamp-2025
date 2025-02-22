@@ -1,0 +1,19 @@
+{
+  "video_id": "SAaWBv630nI",
+  "topic": "Daily Routine and Personal Preferences",
+  "introduction": {
+    "greeting": "日本語能力試験",
+    "lesson_overview": "長介N 5これからN5の町会試験を始めますメモを取ってもいいです問題用紙を開けてください",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では始めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでください",
+    "example_segment": "",
+    "main_segment": "1番男の人と女の人が話しています男の人が1番欲しいのは何ですか...6番男の人と女の人が話しています男の人のお母さんは今何をしていますか...7番男の人が話していますこの人は先週何日休みましたか"
+  },
+  "total_questions": 7,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

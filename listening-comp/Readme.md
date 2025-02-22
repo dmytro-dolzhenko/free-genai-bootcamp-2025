@@ -137,6 +137,97 @@ streamlit run frontend/app.py
   "audio_path": "path/to/audio/file"
 }
 ```
+
+## Data Examples
+
+### Transcript Examples
+
+```json
+{
+  "transcripts": [
+    {
+      "id": "conv_001",
+      "type": "conversation",
+      "content": [
+        {
+          "speaker": "山田さん",
+          "text": "すみません、図書館は何時まで開いていますか？",
+          "translation": "Excuse me, until what time is the library open?"
+        },
+        {
+          "speaker": "職員",
+          "text": "平日は午後9時までです。土日は午後5時で閉まります。",
+          "translation": "On weekdays it's open until 9 PM. On weekends it closes at 5 PM."
+        }
+      ],
+      "topics": ["library", "schedule", "daily_life"],
+      "difficulty": "N5"
+    },
+    {
+      "id": "mono_001",
+      "type": "monologue",
+      "content": {
+        "speaker": "アナウンサー",
+        "text": "お知らせいたします。台風の影響により、本日の午後3時以降の電車の運行を見合わせる可能性がございます。",
+        "translation": "Attention please. Due to the typhoon, train services may be suspended after 3 PM today."
+      },
+      "topics": ["announcement", "weather", "transportation"],
+      "difficulty": "N4"
+    }
+  ]
+}
+```
+
+These transcripts serve as the base content for generating listening comprehension questions. They include:
+- Natural conversations and announcements in Japanese
+- English translations for reference
+- Topic tags for organization
+- JLPT level indicators
+- Speaker identification
+
+### Vectorized Data Examples
+
+```json
+{
+  "vectorized_patterns": [
+    {
+      "id": "pattern_001",
+      "pattern_type": "quick_response",
+      "embedding": [0.123, -0.456, 0.789, ...],
+      "template": {
+        "question_structure": "どうして{subject}は{action}のですか？",
+        "context_requirements": ["reason", "explanation", "time_reference"],
+        "difficulty_markers": ["casual_form", "て_form", "から_explanation"]
+      }
+    },
+    {
+      "id": "pattern_002",
+      "pattern_type": "information_retrieval",
+      "embedding": [-0.234, 0.567, -0.890, ...],
+      "template": {
+        "question_structure": "{event}の{aspect}について、正しいものはどれですか？",
+        "context_requirements": ["event_details", "time", "location", "condition"],
+        "difficulty_markers": ["passive_form", "formal_speech", "conditional_statements"]
+      }
+    }
+  ]
+}
+```
+
+The vectorized data is stored in ChromaDB and serves several purposes:
+- Question pattern matching and retrieval
+- Similarity search for generating related questions
+- Template storage for dynamic question generation
+- Difficulty level calibration
+- Context requirements tracking
+
+These patterns help ensure:
+- Consistent question formatting
+- Appropriate difficulty levels
+- Natural language variations
+- Context-appropriate questions
+- Proper answer distribution
+
 ## Troubleshooting
 
 ### Common Issues

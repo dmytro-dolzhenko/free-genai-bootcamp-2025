@@ -1,0 +1,19 @@
+{
+  "video_id": "k1Bw564_WBY",
+  "topic": "Daily Routine and Conversations",
+  "introduction": {
+    "greeting": "これからN5の長介試験を始めます",
+    "lesson_overview": "The test will cover various daily routine conversations and scenarios",
+    "target_audience": "N5 level Japanese learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では初めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでください",
+    "example_segment": "",
+    "main_segment": "男の人と女の人が話しています男の人はこの後すぐ何をしますか何か手伝いましょうかありがとうじゃあ部屋を掃除してこのお皿を洗ってりんごを切ってそれからジュースを買いにえそれはちょっとじゃあ掃除お願いします男の人はこの後すぐ何をしますか"
+  },
+  "total_questions": 2,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}

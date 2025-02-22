@@ -52,8 +52,6 @@ ENV/
 Thumbs.db
 
 # Project specific
-*.txt
-*.json
 !requirements.txt
 
 # AWS

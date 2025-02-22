@@ -1,0 +1,18 @@
+[
+  {
+    "content_type": "pattern",
+    "video_id": "SAaWBv630nI",
+    "section_name": "Listening Comprehension",
+    "question_type": "multiple-choice",
+    "patterns": [
+      "A and B are talking. What does A want the most?",
+      "A and B are discussing preparations for a party. How many chairs should be prepared?",
+      "A and B are discussing food preferences. What does the woman eat?",
+      "A and B are discussing past activities. What did the man do yesterday?",
+      "A and B are discussing transportation methods. How did the man come to work this morning?",
+      "A and B are discussing occupations. What is the man's mother doing now?",
+      "A is discussing past activities. When did this person take a day off last week?"
+    ],
+    "topic": "Daily Routine and Personal Preferences"
+  }
+]

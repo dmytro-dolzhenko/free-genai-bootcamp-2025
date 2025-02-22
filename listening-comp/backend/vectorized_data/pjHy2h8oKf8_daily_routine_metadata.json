@@ -1,0 +1,19 @@
+{
+  "video_id": "pjHy2h8oKf8",
+  "topic": "Daily Routine",
+  "introduction": {
+    "greeting": "日本語能力試験町会N5これからN5の懲戒試験を始めます",
+    "lesson_overview": "問題用紙を開けてください",
+    "target_audience": "N5 level learners"
+  },
+  "full_conversation": {
+    "opening_segment": "問題1では初めに質問を聞いてくださいそれから話を聞いて問題用紙の1から4の中から1番いいものを1つ選んでください",
+    "example_segment": "",
+    "main_segment": "1番女の人と男の人が話しています男の人はどれを取りますかすみませんその白いカップを取ってくださいどちらですか小さいカップの隣のです男の人はどれを取りますか"
+  },
+  "total_questions": 2,
+  "total_patterns": 1,
+  "sections": [
+    "Listening Comprehension"
+  ]
+}
