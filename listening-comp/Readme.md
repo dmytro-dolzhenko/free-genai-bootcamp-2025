@@ -18,7 +18,7 @@ An AI-powered Japanese Language Proficiency Test (JLPT) practice application tha
 ## System Requirements
 
 - Python 3.8+
-- AWS Account with Bedrock access
+- AWS Account with Bedrock and Polly access
 - ChromaDB
 - Streamlit
 - ffmpeg (for audio processing)
@@ -37,7 +37,7 @@ typing-extensions
 ## AWS Services Used
 
 - AWS Bedrock
-  - Mistral (mistral.mistral-large-2402-v1:0) for question generation
+  - Mistral (mistral.mistral-large-2402-v1:0) LLM for question generation
 - AWS Polly
   - Text-to-speech service for generating audio files of conversations and monologues
   - Supports multiple Japanese voices for natural conversations
@@ -46,11 +46,17 @@ typing-extensions
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/jlpt-practice.git
-cd jlpt-practice
+git clone https://github.com/dmytro-dolzhenko/free-genai-bootcamp-2025.git
+cd listening-comp
 ```
 
-2. Install dependencies:
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -74,10 +80,6 @@ sudo apt install ffmpeg
 ```bash
 brew install ffmpeg
 ```
-
-**Windows:**
-- Download from https://www.gyan.dev/ffmpeg/builds/
-- Add to system PATH
 
 ## Usage
 
@@ -135,19 +137,6 @@ streamlit run frontend/app.py
   "audio_path": "path/to/audio/file"
 }
 ```
-
-## Configuration
-
-Create a `config.yaml` in the project root:
-
-```yaml
-aws:
-  region: eu-west-1
-  model_id: mistral.mistral-large-2402-v1:0
-chroma:
-  persist_directory: chroma_db
-```
-
 ## Troubleshooting
 
 ### Common Issues
@@ -194,10 +183,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 For support, please open an issue in the GitHub repository.
-
-## Acknowledgments
-
-- AWS Bedrock team
-- ChromaDB team
-- Streamlit team
-
