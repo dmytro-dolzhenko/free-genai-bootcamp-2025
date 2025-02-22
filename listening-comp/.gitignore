@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.env
+.venv
+.vevn
+env/
+venv/
+vevn/
+ENV/
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+.history/
+
+# IDE - PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# IDE - Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Local development
+*.log
+*.sqlite
+*.db
+chroma_db/
+.DS_Store
+Thumbs.db
+
+# Project specific
+vectorized_data/
+transcripts/
+*.txt
+*.json
+!requirements.txt
+
+# AWS
+.aws/
+aws-credentials
+.boto
+
+# Misc
+*.bak
+*.swp
+*.swo
+*~
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local 
