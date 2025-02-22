@@ -48,13 +48,10 @@ ENV/
 *.log
 *.sqlite
 *.db
-chroma_db/
 .DS_Store
 Thumbs.db
 
 # Project specific
-vectorized_data/
-transcripts/
 *.txt
 *.json
 !requirements.txt
