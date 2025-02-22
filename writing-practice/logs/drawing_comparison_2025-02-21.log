@@ -1,0 +1,30 @@
+2025-02-21 17:45:47,906 - INFO - Starting OCR comparison for target text: 日本た
+2025-02-21 17:46:59,576 - DEBUG - Detected text in orientation: 日本では
+2025-02-21 17:47:00,016 - DEBUG - Detected text in orientation: ＮＨＫの
+2025-02-21 17:47:00,017 - INFO - Best detected text: 日本では (similarity: 0.5714285714285714)
+2025-02-21 17:48:03,724 - INFO - Starting OCR comparison for target text: ほすね
+2025-02-21 17:48:04,206 - DEBUG - Detected text in orientation: しますね
+2025-02-21 17:48:04,598 - DEBUG - Detected text in orientation: ＲＫｍＨＹ
+2025-02-21 17:48:04,599 - INFO - Best detected text: しますね (similarity: 0.5714285714285714)
+2025-02-21 17:52:06,764 - INFO - Starting OCR comparison for target text: いまた
+2025-02-21 17:53:11,795 - DEBUG - Detected text in orientation: いまた
+2025-02-21 17:53:12,145 - DEBUG - Detected text in orientation: ドイツ
+2025-02-21 17:53:12,145 - INFO - Best detected text: いまた (similarity: 1.0)
+2025-02-21 17:56:16,566 - INFO - Starting OCR comparison for target text: をいる
+2025-02-21 17:57:20,369 - DEBUG - Detected text in orientation: そして、
+2025-02-21 17:57:20,799 - DEBUG - Detected text in orientation: Ｎつ＿¬ｘＪ
+2025-02-21 17:57:20,799 - INFO - Best detected text: None (similarity: 0)
+2025-02-21 18:05:00,868 - INFO - Starting OCR comparison for target text: 、ぎれ
+2025-02-21 18:05:01,295 - DEBUG - Detected text in orientation: 、ぎれ
+2025-02-21 18:05:01,705 - DEBUG - Detected text in orientation: １４：０７
+2025-02-21 18:05:01,706 - INFO - Best detected text: 、ぎれ (similarity: 1.0)
+2025-02-21 18:52:35,133 - INFO - Starting OCR comparison for target text: あんは
+2025-02-21 18:52:35,850 - DEBUG - Detected text in orientation: あんは
+2025-02-21 18:52:36,256 - DEBUG - Detected text in orientation: ±ｙ＄
+2025-02-21 18:52:36,257 - INFO - Best detected text: あんは (similarity: 1.0)
+2025-02-21 19:19:43,938 - INFO - Starting OCR comparison for target text: 、しなた
+2025-02-21 19:21:49,529 - DEBUG - Detected text in orientation: 、しなた
+2025-02-21 19:21:49,908 - DEBUG - Detected text in orientation: ２０１７
+2025-02-21 19:21:49,908 - INFO - Best detected text: 、しなた (similarity: 1.0)
+2025-02-21 19:26:18,465 - INFO - Starting OCR comparison for target text: ますとい
+2025-02-21 19:31:59,399 - INFO - Starting OCR comparison for target text: アん
