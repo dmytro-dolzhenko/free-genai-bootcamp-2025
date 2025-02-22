@@ -7,14 +7,15 @@ import time
 import os
 
 # Get Ollama connection details from environment variables
-OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'ollama-server')
-OLLAMA_PORT = os.getenv('OLLAMA_PORT', '11434')
+OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'localhost')
+OLLAMA_PORT = os.getenv('OLLAMA_PORT', '8008')
 OLLAMA_URL = f"http://{OLLAMA_HOST}:{OLLAMA_PORT}"
 
 # Initialize logger and model only once using Streamlit's session state
 if 'logger' not in st.session_state:
     st.session_state.logger = setup_logger('app')
     st.session_state.logger.info("Starting application")
+    st.session_state.logger.info(f"Connecting to Ollama at {OLLAMA_URL}")
 
     # Initialize model loading
     st.session_state.logger.info("Starting model initialization")
@@ -22,9 +23,10 @@ if 'logger' not in st.session_state:
         # Pull the model using Ollama API
         response = requests.post(
             f"{OLLAMA_URL}/api/pull",
-            json={"model": "llama2:3b"},
-            timeout=600  # 10 minute timeout for model pulling
+            json={"model": "llama3.2:3b"}
         )
+
+        st.session_state.logger.info(f"Response: {response.text}")
         
         if response.status_code == 200:
             st.session_state.logger.info("Model pulled successfully")
@@ -33,22 +35,31 @@ if 'logger' not in st.session_state:
             verify_response = requests.post(
                 f"{OLLAMA_URL}/api/generate",
                 json={
-                    "model": "llama2:3b",
+                    "model": "llama3.2:3b",
                     "prompt": "Hi",
                     "stream": False
-                }
+                },
+                timeout=30  # 30 second timeout for verification
             )
             
             if verify_response.status_code == 200:
                 st.session_state.logger.info("Model verified and ready")
                 st.session_state.model_ready = True
             else:
-                st.session_state.logger.error("Model verification failed")
+                st.session_state.logger.error(f"Model verification failed with status code: {verify_response.status_code}")
+                st.session_state.logger.error(f"Response: {verify_response.text}")
                 st.session_state.model_ready = False
         else:
-            st.session_state.logger.error("Failed to pull model")
+            st.session_state.logger.error(f"Failed to pull model. Status code: {response.status_code}")
+            st.session_state.logger.error(f"Response: {response.text}")
             st.session_state.model_ready = False
             
+    except requests.exceptions.ConnectionError as e:
+        st.session_state.logger.error(f"Connection error to Ollama server: {str(e)}")
+        st.session_state.model_ready = False
+    except requests.exceptions.Timeout as e:
+        st.session_state.logger.error(f"Timeout while connecting to Ollama server: {str(e)}")
+        st.session_state.model_ready = False
     except Exception as e:
         st.session_state.logger.error(f"Error during model initialization: {str(e)}")
         st.session_state.model_ready = False
@@ -65,6 +76,44 @@ def reset_canvas_state():
         del st.session_state.last_detection
     if 'last_result' in st.session_state:
         del st.session_state.last_result
+    if 'feedback' in st.session_state:
+        del st.session_state.feedback
+
+def get_grading_feedback(detected_text, target_text, is_match):
+    """Get detailed grading and feedback using Ollama"""
+    try:
+        prompt = f"""As a Japanese writing expert, grade the following handwriting attempt:
+        Target text: {target_text}
+        Detected text: {detected_text}
+        Was it a match? {is_match}
+        
+        Provide a grade (S, A, B, C, D) and specific feedback for improvement.
+        Use this format:
+        Grade: [grade]
+        Feedback: [specific areas for improvement or praise]
+        
+        S grade is perfect, A is excellent with minor issues, B is good, C needs work, D needs significant improvement.
+        Focus on stroke order, proportions, and character formation in your feedback."""
+
+        response = requests.post(
+            f"{OLLAMA_URL}/api/generate",
+            json={
+                "model": "llama3.2:3b",
+                "prompt": prompt,
+                "stream": False
+            },
+            timeout=180 
+        )
+        
+        if response.status_code == 200:
+            return response.json()['response']
+        else:
+            st.session_state.logger.error(f"Failed to get grading feedback. Status: {response.status_code}")
+            return "Unable to generate feedback at this time."
+            
+    except Exception as e:
+        st.session_state.logger.error(f"Error getting grading feedback: {str(e)}")
+        return "Unable to generate feedback at this time."
 
 def main():
     st.title("Japanese Word Practice")
@@ -146,6 +195,8 @@ def main():
                 if st.button("Clear Canvas", use_container_width=True):
                     st.session_state.logger.debug("Clearing canvas")
                     st.session_state.canvas_key += 1
+                    if 'feedback' in st.session_state:
+                        del st.session_state.feedback
                     st.rerun()
             
             with btn_col2:
@@ -160,6 +211,17 @@ def main():
                             st.session_state.target_text
                         )
                         st.write(f"Detected text: {result['detected_text']}")
+                        
+                        # Get and display grading feedback
+                        feedback = get_grading_feedback(
+                            result['detected_text'],
+                            st.session_state.target_text,
+                            result['is_match']
+                        )
+                        
+                        # Store feedback in session state
+                        st.session_state.feedback = feedback
+                        
                         if result['is_match']:
                             st.session_state.logger.info("Drawing matched target text")
                             st.success("Correct! The text matches!")
@@ -169,11 +231,17 @@ def main():
                     else:
                         st.session_state.logger.warning("Drawing submitted without target text or empty canvas")
                         st.warning("Please draw something first and generate a sentence.")
-        
-        # Always show the target text if one is generated
+
+        # Display target text and feedback columns below the canvas
         if 'target_text' in st.session_state:
-            st.markdown("### Target Text:")
-            st.markdown(f"### {st.session_state.target_text}")
+            target_col, feedback_col = st.columns(2)
+            with target_col:
+                st.markdown("### Target Text")
+                st.markdown(f"### {st.session_state.target_text}")
+            with feedback_col:
+                if 'feedback' in st.session_state:
+                    st.markdown("### Writing Assessment")
+                    st.markdown(st.session_state.feedback)
 
 if __name__ == "__main__":
     main() 

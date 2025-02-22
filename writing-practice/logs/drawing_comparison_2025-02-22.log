@@ -1,0 +1,12 @@
+2025-02-22 15:30:05,807 - INFO - Starting OCR comparison for target text: カるこない
+2025-02-22 15:31:07,900 - DEBUG - Detected text in orientation: ヵろこない
+2025-02-22 15:31:08,265 - DEBUG - Detected text in orientation: イベントは、
+2025-02-22 15:31:08,266 - INFO - Best detected text: ヵろこない (similarity: 0.6)
+2025-02-22 15:32:58,936 - INFO - Starting OCR comparison for target text: 日は 昨东。
+2025-02-22 15:32:59,334 - DEBUG - Detected text in orientation: 円は昨年。
+2025-02-22 15:32:59,724 - DEBUG - Detected text in orientation: ．＄ｕＷ＃７Ｅ
+2025-02-22 15:32:59,725 - INFO - Best detected text: 円は昨年。 (similarity: 0.6)
+2025-02-22 15:34:12,248 - INFO - Starting OCR comparison for target text: をこない
+2025-02-22 15:34:12,665 - DEBUG - Detected text in orientation: をこない
+2025-02-22 15:34:13,020 - DEBUG - Detected text in orientation: これだけ
+2025-02-22 15:34:13,021 - INFO - Best detected text: をこない (similarity: 1.0)

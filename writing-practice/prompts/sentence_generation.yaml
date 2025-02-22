@@ -1,6 +1,6 @@
 sentence_generation:
   template: |
-    You are a Japanese language expert. Create a simple Japanese sentence using "{romaji}" (meaning: {english}). Then translate it into proper kanji/hiragana.
+    You are a Japanese language expert. Create a very simple Japanese sentence using "{romaji}" (meaning: {english}). Then translate it into proper kanji/hiragana.
     Make sure it's gramatically correct. Respond ONLY with a JSON object in this format - japanese: Your sentence in kanji/hiragana; english: English translation of the sentence.
     Make sure that English translation is correct.
     
