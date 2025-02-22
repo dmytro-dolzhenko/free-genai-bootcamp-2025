@@ -1,129 +1,172 @@
 # JLPT Practice Application
 
-A comprehensive application for practicing Japanese Language Proficiency Test (JLPT) questions, powered by AI and vector search technology. The system analyzes Japanese language lesson videos, extracts practice questions, and generates new questions following similar patterns.
+An AI-powered Japanese Language Proficiency Test (JLPT) practice application that generates interactive listening comprehension questions. The system uses AWS Bedrock and ChromaDB to create realistic JLPT-style questions with audio generation capabilities.
 
 ## Features
 
-- 🎯 Automated transcription of Japanese language lesson videos
-- 🔍 AI-powered analysis of lesson content and question patterns
-- 📝 Generation of JLPT-style practice questions
-- 🗄️ Vector-based storage and retrieval of questions
-- 🌐 Interactive web interface for practice sessions
+- 🎧 AI-generated JLPT listening practice questions
+- 🗣️ Text-to-speech audio generation for questions
+- 📝 Four JLPT listening test sections:
+  - Task-based Comprehension
+  - Quick Response
+  - Short Conversations
+  - Information/Monologue
+- 🔍 Topic-based question organization
+- 💡 Instant feedback and explanations
+- 🔄 Dynamic question generation
 
-## System Architecture
+## System Requirements
 
-The application consists of three main components:
+- Python 3.8+
+- AWS Account with Bedrock access
+- ChromaDB
+- Streamlit
+- ffmpeg (for audio processing)
 
-### Backend
+## Dependencies
 
-- `YouTubeTranscriber`: Handles video transcription
-- `TranscriptAnalyzer`: Analyzes transcripts using AWS Bedrock (Mistral)
-- `VectorStoreLoader`: Manages the ChromaDB vector database
+```bash
+streamlit
+chromadb
+boto3
+uuid
+```
 
-### Frontend
+## AWS Services Used
 
-- Streamlit-based web interface
-- Interactive question practice interface
-- Category-based navigation
-- Real-time question generation
-
-### Database
-
-- ChromaDB for vector storage
-- Stores questions, patterns, and metadata
-- Enables semantic search for similar questions
+- AWS Bedrock
+  - Mistral (mistral.mistral-large-2402-v1:0) for question generation
+- AWS Polly
+  - Text-to-speech service for generating audio files of conversations and monologues
+  - Supports multiple Japanese voices for natural conversations
 
 ## Installation
 
 1. Clone the repository:
-
 ```bash
 git clone https://github.com/yourusername/jlpt-practice.git
 cd jlpt-practice
 ```
 
-
 2. Install dependencies:
-
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up AWS credentials for Bedrock:
-
+3. Set up AWS credentials:
 ```bash
 export AWS_ACCESS_KEY_ID=your_access_key_id
 export AWS_SECRET_ACCESS_KEY=your_secret_access_key
+export AWS_DEFAULT_REGION=eu-west-1
 ```
+
+4. Install ffmpeg (required for audio processing):
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+**macOS:**
+```bash
+brew install ffmpeg
+```
+
+**Windows:**
+- Download from https://www.gyan.dev/ffmpeg/builds/
+- Add to system PATH
 
 ## Usage
 
-### 1. Transcribe Videos
-
-```python
-from backend.youtube_transcriber import YouTubeTranscriber
-transcriber = YouTubeTranscriber()
-transcriber.transcribe("https://www.youtube.com/watch?v=video_id", "ja")
-```
-
-### 2. Analyze Transcripts
-
-```python
-from backend.transcript_analyzer import TranscriptAnalyzer
-analyzer = TranscriptAnalyzer(
-region_name="eu-west-1",
-model_id="mistral.mistral-large-2402-v1:0"
-)
-results = analyzer.analyze_transcript("transcript_file.txt")
-```
-
-### 3. Load Vector Store
-
-```python
-from backend.vector_store_loader import VectorStoreLoader
-loader = VectorStoreLoader(persist_directory="chroma_db")
-collection = loader.load_vectorized_data(
-vectorized_data_path="vectorized_data",
-collection_name="japanese_lessons"
-)
-```
-
-### 4. Run Web Interface
-
+Run the Streamlit application:
 ```bash
 streamlit run frontend/app.py
 ```
 
+## Application Structure
+
+### Frontend (Streamlit)
+- Interactive web interface
+- Category selection
+- Four practice sections
+- Audio playback
+- Answer checking
+- Dynamic question generation
+
+### Backend
+- ChromaDB for pattern storage
+- AWS Bedrock integration
+- Audio generation system
+- Question analysis and generation
+
 ## Data Structure
 
-### Transcript Analysis Output
+### Question Format
 
 ```json
 {
-"video_id": "video_id",
-"topic": "JLPT N5 Listening Test",
-"introduction": {
-"greeting": "...",
-"lesson_overview": "...",
-"target_audience": "..."
-},
-"questions": [
-{
-"question_text": "...",
-"context": "...",
-"answer_options": ["..."],
-"correct_answer": "..."
-}
-]
+  "conversation": [
+    {"speaker": "田中先生 (Tanaka Sensei)", "text": "Japanese text"},
+    {"speaker": "田中太郎 (Tanaka Taro)", "text": "Japanese text"}
+  ],
+  "question_text": "Question in Japanese",
+  "answer_options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+  "correct_answer": "Correct option",
+  "explanation": "Explanation in English",
+  "audio_path": "path/to/audio/file"
 }
 ```
 
+### Monologue Format
 
-### Vector Store Documents
+```json
+{
+  "monologue": {
+    "speaker": "田中先生 (Tanaka Sensei)",
+    "text": "Japanese announcement or explanation"
+  },
+  "question_text": "Question about the announcement",
+  "answer_options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+  "correct_answer": "Correct option",
+  "explanation": "Explanation in English",
+  "audio_path": "path/to/audio/file"
+}
+```
 
-- Question documents
-- Pattern documents
-- Metadata documents
+## Configuration
+
+Create a `config.yaml` in the project root:
+
+```yaml
+aws:
+  region: eu-west-1
+  model_id: mistral.mistral-large-2402-v1:0
+chroma:
+  persist_directory: chroma_db
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. AWS Bedrock Access
+```
+Error: botocore.exceptions.ClientError
+Solution: Verify AWS credentials and Bedrock access
+```
+
+2. Audio Generation
+```
+Error: ffmpeg not found
+Solution: Install ffmpeg and verify it's in system PATH
+```
+
+3. ChromaDB
+```
+Error: Failed to initialize ChromaDB
+Solution: Check persistence directory permissions
+```
 
 ## Contributing
 
@@ -137,97 +180,22 @@ streamlit run frontend/app.py
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Requirements
+## Roadmap
 
-- Python 3.8+
-- AWS Account with Bedrock access
-- ChromaDB
-- Streamlit
-- YouTube Data API credentials
-- ffmpeg (required for audio processing)
-
-## Configuration
-
-Create a `config.yaml` file in the project root:
-
-
-```yaml
-aws:
-region: eu-west-1
-model_id: mistral.mistral-large-2402-v1:0
-chroma:
-persist_directory: chroma_db
-frontend:
-title: JLPT Practice Questions
-theme: light
-```
-
-## Troubleshooting
-
-### Common Issues
-
-1. AWS Credentials
-```bash
-Error: botocore.exceptions.ClientError: An error occurred (UnrecognizedClientException)
-Solution: Check AWS credentials are properly set
-```
-
-2. ChromaDB
-```bash
-Error: Failed to load vector store
-Solution: Ensure ChromaDB is properly installed and running
-```
-3. Video Transcription
-```bash
-Error: youtube_dl.utils.DownloadError
-Solution: Update youtube-dl or check video URL validity
-```
+- [ ] Support for additional JLPT levels (N4-N1)
+- [ ] User progress tracking
+- [ ] More varied question patterns
+- [ ] Enhanced audio generation quality
+- [ ] Multiple voice options for conversations
+- [ ] Practice session history
 
 ## Support
 
-For support, please open an issue in the GitHub repository or contact the maintainers.
+For support, please open an issue in the GitHub repository.
 
 ## Acknowledgments
 
-- AWS Bedrock team for the Mistral model
-- ChromaDB team for the vector database
-- YouTube Data API team
-
-## Roadmap
-
-- [ ] Add support for other JLPT levels
-- [ ] Implement user authentication
-- [ ] Add progress tracking
-- [ ] Expand question patterns
-- [ ] Improve question generation quality
-
-## Installing ffmpeg
-
-### Ubuntu/Debian
-```bash
-sudo apt update
-sudo apt install ffmpeg
-```
-
-### Windows
-1. Download ffmpeg from https://www.gyan.dev/ffmpeg/builds/
-2. Download "ffmpeg-release-essentials.zip"
-3. Extract to a location (e.g., C:\ffmpeg)
-4. Add the bin folder (C:\ffmpeg\bin) to your system's PATH:
-   - Open System Properties > Advanced > Environment Variables
-   - Under System Variables, find and select "Path"
-   - Click Edit > New
-   - Add the path to ffmpeg bin folder (e.g., C:\ffmpeg\bin)
-   - Click OK on all windows
-5. Restart your terminal/IDE
-
-### macOS
-```bash
-brew install ffmpeg
-```
-
-Verify installation by running:
-```bash
-ffmpeg -version
-```
+- AWS Bedrock team
+- ChromaDB team
+- Streamlit team
 
