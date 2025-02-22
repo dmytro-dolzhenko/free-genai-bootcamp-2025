@@ -27,9 +27,11 @@ An AI-powered Japanese Language Proficiency Test (JLPT) practice application tha
 
 ```bash
 streamlit
-chromadb
 boto3
-uuid
+chromadb
+pydub
+youtube_transcript_api
+typing-extensions
 ```
 
 ## AWS Services Used
