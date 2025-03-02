@@ -1,0 +1,7 @@
+duckduckgo-search
+requests
+html2text
+mecab-python3
+PyYAML
+unidic
+pydantic

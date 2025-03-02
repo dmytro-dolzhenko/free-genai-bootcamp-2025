@@ -1,0 +1,63 @@
+tools:
+  - name: search_web
+    description: Search the web using DuckDuckGo search engine
+    parameters:
+      query:
+        type: string
+        description: The search query to look up
+        required: true
+      max_results:
+        type: integer
+        description: Maximum number of results to return (default is 10)
+        required: false
+        default: 10
+    returns:
+      type: array
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            description: Title of the search result
+          url:
+            type: string
+            description: URL of the search result
+    example: |
+      # Search for information about The Beatles
+      results = tools.search_web('The Beatles')
+      first_result = results[0]  # Get first result
+      print(f"Title: {first_result['title']}")
+      print(f"URL: {first_result['url']}")
+
+  - name: extract_content
+    description: Extract clean text content from a webpage by removing HTML and unnecessary elements
+    parameters:
+      url:
+        type: string
+        description: The URL of the webpage to extract content from
+        required: true
+    returns:
+      type: string
+      description: Extracted text content from the webpage
+    example: |
+      # Extract content from a webpage
+      content = tools.extract_content('https://example.com/article')
+      print(content[:500])  # Print first 500 characters
+
+  - name: tokenize_japanese
+    description: Split Japanese text into individual words and convert to dictionary form
+    parameters:
+      text:
+        type: string
+        description: Japanese text to tokenize
+        required: true
+    returns:
+      type: array
+      items:
+        type: string
+        description: List of Japanese words in their base/dictionary form
+    example: |
+      # Tokenize Japanese text
+      text = "私は東京に住んでいます。"
+      words = tools.tokenize_japanese(text)
+      print(words)  # ['私', 'は', '東京', 'に', '住む']
