@@ -61,7 +61,7 @@ If you're using Windows, properly configure WSL to avoid build issues:
 
 ```bash
 git clone <repository-url>
-cd vllm
+cd opea-vllm
 ```
 
 ### 3. Set Environment Variables

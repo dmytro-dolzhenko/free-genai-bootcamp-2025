@@ -64,7 +64,7 @@ A chat agent that acts as a teaching assistant to guide students in translating 
 - Performance analysis of different models for Japanese language tasks
 
 ### 🚀 vLLM Integration
-**Location:** `/vllm`
+**Location:** `/opea-vllm`
 
 OPEA vLLM Project with Megaservice utilizing Qwen2.5 Model.
 
