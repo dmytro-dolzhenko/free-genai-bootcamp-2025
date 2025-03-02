@@ -1,0 +1,55 @@
+services:
+  vllm-server:
+    image: opea/vllm-cpu:latest
+    container_name: vllm-server
+    volumes:
+      - ./data:/data
+    shm_size: 8g
+    environment:
+      HF_TOKEN: ${HF_TOKEN}
+      LLM_MODEL_ID: Qwen/Qwen2.5-0.5B-Instruct
+      VLLM_TORCH_PROFILER_DIR: /mnt
+      host_ip: 127.0.0.1
+      LLM_ENDPOINT_PORT: 80
+      VLLM_SKIP_WARMUP: false
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://127.0.0.1:80/health || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 100
+    command: --model Qwen/Qwen2.5-0.5B-Instruct --host 0.0.0.0 --port 80
+    networks:
+      - opea-network
+  megaservice:
+    build:
+      context: ./megaservice
+      dockerfile: Dockerfile
+    container_name: megaservice
+    environment:
+      MEGASERVICE_HOST_IP: '0.0.0.0'
+      MEGASERVICE_PORT: 8888
+      LLM_HOST_IP: vllm-server
+      LLM_ENDPOINT_PORT: 80
+    networks:
+      - opea-network
+    depends_on:
+      - vllm-server
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: ui
+    ports:
+      - 8501:8501
+    environment:
+      MEGASERVICE_HOST_IP: megaservice
+      MEGASERVICE_PORT: 8888
+    networks:
+      - opea-network
+    depends_on:
+      - megaservice
+      - vllm-server
+networks:
+  opea-network:
+    driver: bridge
+    name: opea-network
