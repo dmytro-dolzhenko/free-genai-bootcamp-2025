@@ -60,7 +60,7 @@ If you're using Windows, properly configure WSL to avoid build issues:
 ### 2. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/dmytro-dolzhenko/free-genai-bootcamp-2025.git
 cd opea-vllm
 ```
 
