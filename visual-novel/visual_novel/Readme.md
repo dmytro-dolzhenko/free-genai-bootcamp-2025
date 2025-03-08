@@ -10,14 +10,6 @@ To run this visual novel, you will need:
 
 - **Ren'Py SDK**: The game is developed using the Ren'Py engine. You can download the latest version from the [Ren'Py website](https://www.renpy.org/).
 
-## System Requirements
-
-- **Operating System**: Windows, macOS, or Linux
-- **Processor**: 1 GHz or faster
-- **Memory**: 512 MB RAM
-- **Graphics**: OpenGL 2.0 or DirectX 9.0c compatible
-- **Storage**: 500 MB available space
-
 ## Installation and Setup
 
 1. **Download Ren'Py**: 
@@ -29,7 +21,8 @@ To run this visual novel, you will need:
 3. **Clone the Repository**:
    - Clone this repository to your local machine using Git:
      ```bash
-     git clone https://github.com/yourusername/sakura-high-visual-novel.git
+     git clone https://github.com/dmytro-dolzhenko/free-genai-bootcamp-2025.git
+     cd free-genai-bootcamp-2025/visual-novel
      ```
 
 4. **Open the Project in Ren'Py**:
