@@ -78,6 +78,16 @@ OPEA vLLM Project with Megaservice utilizing Qwen2.5 Model.
 
 Tool for practicing Japanese writing with AI feedback.
 
+### 📚 Visual Novel Project
+**Location:** `/visual-novel`
+
+A project focused on creating an interactive visual novel experience using generative AI.
+
+- Storyline development with AI-generated content
+- Character design and dialogue generation
+- Integration with visual and audio elements
+- Interactive branching narratives
+
 ## Getting Started
 
 Each project has its own README with specific setup instructions. Navigate to the project directory of interest and follow the instructions provided.
