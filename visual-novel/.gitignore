@@ -1,0 +1,4 @@
+.venv/
+renpy/
+log.txt
+traceback.txt
