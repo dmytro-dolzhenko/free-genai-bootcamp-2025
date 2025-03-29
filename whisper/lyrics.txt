@@ -1,0 +1,1326 @@
+[
+    {
+        "text": " In  the  long  journey  of  stars,  Interponed  over  shared  desires,",
+        "start": 1.3599999999999999,
+        "end": 9.12,
+        "words": [
+            {
+                "word": " In",
+                "start": 1.3599999999999999,
+                "end": 2.4,
+                "probability": 0.1124936044216156
+            },
+            {
+                "word": " the",
+                "start": 2.4,
+                "end": 2.92,
+                "probability": 0.9504664540290833
+            },
+            {
+                "word": " long",
+                "start": 2.92,
+                "end": 3.42,
+                "probability": 0.33284762501716614
+            },
+            {
+                "word": " journey",
+                "start": 3.42,
+                "end": 3.88,
+                "probability": 0.11782818287611008
+            },
+            {
+                "word": " of",
+                "start": 3.88,
+                "end": 4.58,
+                "probability": 0.9577978253364563
+            },
+            {
+                "word": " stars,",
+                "start": 4.58,
+                "end": 5.58,
+                "probability": 0.8613475561141968
+            },
+            {
+                "word": " Interponed",
+                "start": 5.96,
+                "end": 6.7,
+                "probability": 0.529829184214274
+            },
+            {
+                "word": " over",
+                "start": 6.7,
+                "end": 7.12,
+                "probability": 0.7784777283668518
+            },
+            {
+                "word": " shared",
+                "start": 7.12,
+                "end": 8.0,
+                "probability": 0.9100046753883362
+            },
+            {
+                "word": " desires,",
+                "start": 8.0,
+                "end": 9.12,
+                "probability": 0.9812042117118835
+            }
+        ]
+    },
+    {
+        "text": " Sand -black,  the  last  normal  wars,  These  found  through  toxic  fire,",
+        "start": 9.82,
+        "end": 16.44,
+        "words": [
+            {
+                "word": " Sand",
+                "start": 9.82,
+                "end": 10.08,
+                "probability": 0.43596234917640686
+            },
+            {
+                "word": "-black,",
+                "start": 10.08,
+                "end": 10.58,
+                "probability": 0.1401827037334442
+            },
+            {
+                "word": " the",
+                "start": 10.76,
+                "end": 11.04,
+                "probability": 0.3978758752346039
+            },
+            {
+                "word": " last",
+                "start": 11.04,
+                "end": 11.44,
+                "probability": 0.9166284799575806
+            },
+            {
+                "word": " normal",
+                "start": 11.44,
+                "end": 11.96,
+                "probability": 0.28531312942504883
+            },
+            {
+                "word": " wars,",
+                "start": 11.96,
+                "end": 12.9,
+                "probability": 0.6830487847328186
+            },
+            {
+                "word": " These",
+                "start": 13.4,
+                "end": 13.74,
+                "probability": 0.8845020532608032
+            },
+            {
+                "word": " found",
+                "start": 13.74,
+                "end": 14.1,
+                "probability": 0.530043363571167
+            },
+            {
+                "word": " through",
+                "start": 14.1,
+                "end": 14.42,
+                "probability": 0.7905578017234802
+            },
+            {
+                "word": " toxic",
+                "start": 14.42,
+                "end": 15.44,
+                "probability": 0.4327632188796997
+            },
+            {
+                "word": " fire,",
+                "start": 15.44,
+                "end": 16.44,
+                "probability": 0.9326428174972534
+            }
+        ]
+    },
+    {
+        "text": " Dance -bound  to  rims  unknown,  Our  hearts,  fears  were  never  alone,",
+        "start": 17.06,
+        "end": 23.36,
+        "words": [
+            {
+                "word": " Dance",
+                "start": 17.06,
+                "end": 17.38,
+                "probability": 0.6723121404647827
+            },
+            {
+                "word": "-bound",
+                "start": 17.38,
+                "end": 17.78,
+                "probability": 0.48206520080566406
+            },
+            {
+                "word": " to",
+                "start": 17.78,
+                "end": 18.18,
+                "probability": 0.9232967495918274
+            },
+            {
+                "word": " rims",
+                "start": 18.18,
+                "end": 18.94,
+                "probability": 0.7154281437397003
+            },
+            {
+                "word": " unknown,",
+                "start": 18.94,
+                "end": 19.5,
+                "probability": 0.9467032551765442
+            },
+            {
+                "word": " Our",
+                "start": 20.04,
+                "end": 20.16,
+                "probability": 0.7790185213088989
+            },
+            {
+                "word": " hearts,",
+                "start": 20.16,
+                "end": 20.7,
+                "probability": 0.6095275282859802
+            },
+            {
+                "word": " fears",
+                "start": 20.7,
+                "end": 21.0,
+                "probability": 0.8372869491577148
+            },
+            {
+                "word": " were",
+                "start": 21.0,
+                "end": 21.34,
+                "probability": 0.5317856669425964
+            },
+            {
+                "word": " never",
+                "start": 21.34,
+                "end": 22.4,
+                "probability": 0.9929713606834412
+            },
+            {
+                "word": " alone,",
+                "start": 22.4,
+                "end": 23.36,
+                "probability": 0.9952201247215271
+            }
+        ]
+    },
+    {
+        "text": " Hailing  friends  from  distant  zones,  Sharing  joy  and  love  we  grow.",
+        "start": 23.36,
+        "end": 32.42,
+        "words": [
+            {
+                "word": " Hailing",
+                "start": 23.36,
+                "end": 24.52,
+                "probability": 0.4897304456681013
+            },
+            {
+                "word": " friends",
+                "start": 24.52,
+                "end": 25.1,
+                "probability": 0.9100980162620544
+            },
+            {
+                "word": " from",
+                "start": 25.1,
+                "end": 25.6,
+                "probability": 0.9757835268974304
+            },
+            {
+                "word": " distant",
+                "start": 25.6,
+                "end": 26.28,
+                "probability": 0.9696687459945679
+            },
+            {
+                "word": " zones,",
+                "start": 26.28,
+                "end": 27.5,
+                "probability": 0.9461250901222229
+            },
+            {
+                "word": " Sharing",
+                "start": 28.26,
+                "end": 28.4,
+                "probability": 0.8747780323028564
+            },
+            {
+                "word": " joy",
+                "start": 28.4,
+                "end": 28.78,
+                "probability": 0.8638895153999329
+            },
+            {
+                "word": " and",
+                "start": 28.78,
+                "end": 29.16,
+                "probability": 0.5710835456848145
+            },
+            {
+                "word": " love",
+                "start": 29.16,
+                "end": 29.56,
+                "probability": 0.7584781646728516
+            },
+            {
+                "word": " we",
+                "start": 29.56,
+                "end": 30.14,
+                "probability": 0.698158323764801
+            },
+            {
+                "word": " grow.",
+                "start": 30.14,
+                "end": 32.42,
+                "probability": 0.9442951083183289
+            }
+        ]
+    },
+    {
+        "text": " Amid  the  harm  of  machines,  The  glance  reveals  new  souls,",
+        "start": 38.3,
+        "end": 43.62,
+        "words": [
+            {
+                "word": " Amid",
+                "start": 38.3,
+                "end": 39.28,
+                "probability": 0.7734961807727814
+            },
+            {
+                "word": " the",
+                "start": 39.28,
+                "end": 39.6,
+                "probability": 0.9330088496208191
+            },
+            {
+                "word": " harm",
+                "start": 39.6,
+                "end": 39.84,
+                "probability": 0.2511693835258484
+            },
+            {
+                "word": " of",
+                "start": 39.84,
+                "end": 40.14,
+                "probability": 0.9942914247512817
+            },
+            {
+                "word": " machines,",
+                "start": 40.14,
+                "end": 40.8,
+                "probability": 0.4954596757888794
+            },
+            {
+                "word": " The",
+                "start": 41.1,
+                "end": 41.26,
+                "probability": 0.25396478176116943
+            },
+            {
+                "word": " glance",
+                "start": 41.26,
+                "end": 41.78,
+                "probability": 0.7719484567642212
+            },
+            {
+                "word": " reveals",
+                "start": 41.78,
+                "end": 42.62,
+                "probability": 0.9891319870948792
+            },
+            {
+                "word": " new",
+                "start": 42.62,
+                "end": 43.18,
+                "probability": 0.948677659034729
+            },
+            {
+                "word": " souls,",
+                "start": 43.18,
+                "end": 43.62,
+                "probability": 0.9956794381141663
+            }
+        ]
+    },
+    {
+        "text": " Connecting  in  the  casted  wheels,  A  tree  forged  over  flavors  intertwined,",
+        "start": 43.88,
+        "end": 49.7,
+        "words": [
+            {
+                "word": " Connecting",
+                "start": 43.88,
+                "end": 44.72,
+                "probability": 0.904588520526886
+            },
+            {
+                "word": " in",
+                "start": 44.72,
+                "end": 44.9,
+                "probability": 0.29702645540237427
+            },
+            {
+                "word": " the",
+                "start": 44.9,
+                "end": 45.2,
+                "probability": 0.9080853462219238
+            },
+            {
+                "word": " casted",
+                "start": 45.2,
+                "end": 45.88,
+                "probability": 0.6335878074169159
+            },
+            {
+                "word": " wheels,",
+                "start": 45.88,
+                "end": 46.22,
+                "probability": 0.9092311263084412
+            },
+            {
+                "word": " A",
+                "start": 46.34,
+                "end": 46.54,
+                "probability": 0.752434253692627
+            },
+            {
+                "word": " tree",
+                "start": 46.54,
+                "end": 46.92,
+                "probability": 0.9419723749160767
+            },
+            {
+                "word": " forged",
+                "start": 46.92,
+                "end": 47.4,
+                "probability": 0.9212905764579773
+            },
+            {
+                "word": " over",
+                "start": 47.4,
+                "end": 47.82,
+                "probability": 0.8924979567527771
+            },
+            {
+                "word": " flavors",
+                "start": 47.82,
+                "end": 48.5,
+                "probability": 0.7611709833145142
+            },
+            {
+                "word": " intertwined,",
+                "start": 48.5,
+                "end": 49.7,
+                "probability": 0.9698723256587982
+            }
+        ]
+    },
+    {
+        "text": " In  a  universe  that's  loved  like  the  Thines,  Together  we  sway  stars  in  our  eyes,",
+        "start": 49.7,
+        "end": 57.34,
+        "words": [
+            {
+                "word": " In",
+                "start": 49.7,
+                "end": 50.36,
+                "probability": 0.12456542998552322
+            },
+            {
+                "word": " a",
+                "start": 50.36,
+                "end": 50.6,
+                "probability": 0.5831393599510193
+            },
+            {
+                "word": " universe",
+                "start": 50.6,
+                "end": 51.34,
+                "probability": 0.9475700259208679
+            },
+            {
+                "word": " that's",
+                "start": 51.34,
+                "end": 52.14,
+                "probability": 0.7229861319065094
+            },
+            {
+                "word": " loved",
+                "start": 52.14,
+                "end": 52.36,
+                "probability": 0.6686390042304993
+            },
+            {
+                "word": " like",
+                "start": 52.36,
+                "end": 52.96,
+                "probability": 0.9795998334884644
+            },
+            {
+                "word": " the",
+                "start": 52.96,
+                "end": 53.34,
+                "probability": 0.9326193332672119
+            },
+            {
+                "word": " Thines,",
+                "start": 53.34,
+                "end": 53.88,
+                "probability": 0.14470792561769485
+            },
+            {
+                "word": " Together",
+                "start": 54.48,
+                "end": 54.64,
+                "probability": 0.7497872710227966
+            },
+            {
+                "word": " we",
+                "start": 54.64,
+                "end": 55.04,
+                "probability": 0.9656361937522888
+            },
+            {
+                "word": " sway",
+                "start": 55.04,
+                "end": 55.58,
+                "probability": 0.9681241512298584
+            },
+            {
+                "word": " stars",
+                "start": 55.58,
+                "end": 56.32,
+                "probability": 0.8627661466598511
+            },
+            {
+                "word": " in",
+                "start": 56.32,
+                "end": 56.74,
+                "probability": 0.9645532965660095
+            },
+            {
+                "word": " our",
+                "start": 56.74,
+                "end": 57.0,
+                "probability": 0.9894842505455017
+            },
+            {
+                "word": " eyes,",
+                "start": 57.0,
+                "end": 57.34,
+                "probability": 0.986362874507904
+            }
+        ]
+    },
+    {
+        "text": " Across  sky -wishlist  wide  and  the  whole  disguise,  Laughter  echoed  in  the  empty  aisles.",
+        "start": 57.54,
+        "end": 64.86,
+        "words": [
+            {
+                "word": " Across",
+                "start": 57.54,
+                "end": 57.88,
+                "probability": 0.9295353889465332
+            },
+            {
+                "word": " sky",
+                "start": 57.88,
+                "end": 58.28,
+                "probability": 0.666529655456543
+            },
+            {
+                "word": "-wishlist",
+                "start": 58.28,
+                "end": 58.78,
+                "probability": 0.31565700098872185
+            },
+            {
+                "word": " wide",
+                "start": 58.78,
+                "end": 59.26,
+                "probability": 0.4782940447330475
+            },
+            {
+                "word": " and",
+                "start": 59.26,
+                "end": 59.52,
+                "probability": 0.43946629762649536
+            },
+            {
+                "word": " the",
+                "start": 59.52,
+                "end": 59.7,
+                "probability": 0.628302276134491
+            },
+            {
+                "word": " whole",
+                "start": 59.7,
+                "end": 60.12,
+                "probability": 0.7568756937980652
+            },
+            {
+                "word": " disguise,",
+                "start": 60.12,
+                "end": 61.02,
+                "probability": 0.4584786593914032
+            },
+            {
+                "word": " Laughter",
+                "start": 61.4,
+                "end": 61.6,
+                "probability": 0.6177332997322083
+            },
+            {
+                "word": " echoed",
+                "start": 61.6,
+                "end": 62.22,
+                "probability": 0.6020152866840363
+            },
+            {
+                "word": " in",
+                "start": 62.22,
+                "end": 62.42,
+                "probability": 0.9769437909126282
+            },
+            {
+                "word": " the",
+                "start": 62.42,
+                "end": 62.8,
+                "probability": 0.9918792843818665
+            },
+            {
+                "word": " empty",
+                "start": 62.8,
+                "end": 63.4,
+                "probability": 0.9914255142211914
+            },
+            {
+                "word": " aisles.",
+                "start": 63.4,
+                "end": 64.86,
+                "probability": 0.7482393980026245
+            }
+        ]
+    },
+    {
+        "text": " It  clips  back,  cheddar,  moons  and  rye,  Across  the  universe  our  sky,",
+        "start": 68.42,
+        "end": 74.7,
+        "words": [
+            {
+                "word": " It",
+                "start": 68.42,
+                "end": 68.64,
+                "probability": 0.18414035439491272
+            },
+            {
+                "word": " clips",
+                "start": 68.64,
+                "end": 68.86,
+                "probability": 0.7104824781417847
+            },
+            {
+                "word": " back,",
+                "start": 68.86,
+                "end": 69.18,
+                "probability": 0.9128991961479187
+            },
+            {
+                "word": " cheddar,",
+                "start": 69.34,
+                "end": 69.62,
+                "probability": 0.11178378015756607
+            },
+            {
+                "word": " moons",
+                "start": 70.18,
+                "end": 70.72,
+                "probability": 0.7232163548469543
+            },
+            {
+                "word": " and",
+                "start": 70.72,
+                "end": 71.1,
+                "probability": 0.5515531301498413
+            },
+            {
+                "word": " rye,",
+                "start": 71.1,
+                "end": 71.92,
+                "probability": 0.8291953206062317
+            },
+            {
+                "word": " Across",
+                "start": 72.1,
+                "end": 72.52,
+                "probability": 0.9731643795967102
+            },
+            {
+                "word": " the",
+                "start": 72.52,
+                "end": 72.94,
+                "probability": 0.6356052756309509
+            },
+            {
+                "word": " universe",
+                "start": 72.94,
+                "end": 73.92,
+                "probability": 0.9873682856559753
+            },
+            {
+                "word": " our",
+                "start": 73.92,
+                "end": 74.28,
+                "probability": 0.25393232703208923
+            },
+            {
+                "word": " sky,",
+                "start": 74.28,
+                "end": 74.7,
+                "probability": 0.9678125381469727
+            }
+        ]
+    },
+    {
+        "text": " With  you  a  sandwich  could  suffice,  To  break  the  barrier's  melt,  the  ice.",
+        "start": 74.7,
+        "end": 82.4,
+        "words": [
+            {
+                "word": " With",
+                "start": 74.7,
+                "end": 76.02,
+                "probability": 0.03643767535686493
+            },
+            {
+                "word": " you",
+                "start": 76.02,
+                "end": 76.38,
+                "probability": 0.7766726016998291
+            },
+            {
+                "word": " a",
+                "start": 76.38,
+                "end": 76.9,
+                "probability": 0.6179871559143066
+            },
+            {
+                "word": " sandwich",
+                "start": 76.9,
+                "end": 77.02,
+                "probability": 0.9891645312309265
+            },
+            {
+                "word": " could",
+                "start": 77.02,
+                "end": 78.02,
+                "probability": 0.980624258518219
+            },
+            {
+                "word": " suffice,",
+                "start": 78.02,
+                "end": 79.18,
+                "probability": 0.9946992695331573
+            },
+            {
+                "word": " To",
+                "start": 79.36,
+                "end": 79.58,
+                "probability": 0.8685135841369629
+            },
+            {
+                "word": " break",
+                "start": 79.58,
+                "end": 79.88,
+                "probability": 0.9443293809890747
+            },
+            {
+                "word": " the",
+                "start": 79.88,
+                "end": 80.22,
+                "probability": 0.9796196222305298
+            },
+            {
+                "word": " barrier's",
+                "start": 80.22,
+                "end": 80.98,
+                "probability": 0.5374121591448784
+            },
+            {
+                "word": " melt,",
+                "start": 80.98,
+                "end": 81.38,
+                "probability": 0.40402936935424805
+            },
+            {
+                "word": " the",
+                "start": 81.56,
+                "end": 81.9,
+                "probability": 0.6374639868736267
+            },
+            {
+                "word": " ice.",
+                "start": 81.9,
+                "end": 82.4,
+                "probability": 0.9230482578277588
+            }
+        ]
+    },
+    {
+        "text": " Once  hostile  eyes,  now  soft  and  quiet,  Smiled  cosmic  journeys,  fade  for  just  a  little  while,",
+        "start": 83.42,
+        "end": 90.42,
+        "words": [
+            {
+                "word": " Once",
+                "start": 83.42,
+                "end": 83.78,
+                "probability": 0.9276905059814453
+            },
+            {
+                "word": " hostile",
+                "start": 83.78,
+                "end": 84.52,
+                "probability": 0.95259028673172
+            },
+            {
+                "word": " eyes,",
+                "start": 84.52,
+                "end": 84.94,
+                "probability": 0.5280680656433105
+            },
+            {
+                "word": " now",
+                "start": 84.94,
+                "end": 85.28,
+                "probability": 0.7028680443763733
+            },
+            {
+                "word": " soft",
+                "start": 85.28,
+                "end": 85.5,
+                "probability": 0.5406644344329834
+            },
+            {
+                "word": " and",
+                "start": 85.5,
+                "end": 86.08,
+                "probability": 0.5304789543151855
+            },
+            {
+                "word": " quiet,",
+                "start": 86.08,
+                "end": 86.22,
+                "probability": 0.5331845283508301
+            },
+            {
+                "word": " Smiled",
+                "start": 86.22,
+                "end": 86.98,
+                "probability": 0.7973048090934753
+            },
+            {
+                "word": " cosmic",
+                "start": 86.98,
+                "end": 87.46,
+                "probability": 0.8028250336647034
+            },
+            {
+                "word": " journeys,",
+                "start": 87.46,
+                "end": 88.12,
+                "probability": 0.6142048835754395
+            },
+            {
+                "word": " fade",
+                "start": 88.48,
+                "end": 88.58,
+                "probability": 0.14912042021751404
+            },
+            {
+                "word": " for",
+                "start": 88.58,
+                "end": 88.86,
+                "probability": 0.8005387783050537
+            },
+            {
+                "word": " just",
+                "start": 88.86,
+                "end": 89.44,
+                "probability": 0.9871368408203125
+            },
+            {
+                "word": " a",
+                "start": 89.44,
+                "end": 89.72,
+                "probability": 0.986499547958374
+            },
+            {
+                "word": " little",
+                "start": 89.72,
+                "end": 90.12,
+                "probability": 0.993432879447937
+            },
+            {
+                "word": " while,",
+                "start": 90.12,
+                "end": 90.42,
+                "probability": 0.9963405132293701
+            }
+        ]
+    },
+    {
+        "text": " Under  flickering  lights  in  this  humble  place,  Harmony  grows,  transcending  time  and  space.",
+        "start": 90.88,
+        "end": 98.04,
+        "words": [
+            {
+                "word": " Under",
+                "start": 90.88,
+                "end": 91.14,
+                "probability": 0.8664528131484985
+            },
+            {
+                "word": " flickering",
+                "start": 91.14,
+                "end": 91.9,
+                "probability": 0.9953649342060089
+            },
+            {
+                "word": " lights",
+                "start": 91.9,
+                "end": 92.42,
+                "probability": 0.9824132919311523
+            },
+            {
+                "word": " in",
+                "start": 92.42,
+                "end": 92.76,
+                "probability": 0.6269806027412415
+            },
+            {
+                "word": " this",
+                "start": 92.76,
+                "end": 93.12,
+                "probability": 0.9944025874137878
+            },
+            {
+                "word": " humble",
+                "start": 93.12,
+                "end": 93.7,
+                "probability": 0.9974026083946228
+            },
+            {
+                "word": " place,",
+                "start": 93.7,
+                "end": 94.46,
+                "probability": 0.9931529760360718
+            },
+            {
+                "word": " Harmony",
+                "start": 95.12,
+                "end": 95.62,
+                "probability": 0.9779980778694153
+            },
+            {
+                "word": " grows,",
+                "start": 95.62,
+                "end": 95.94,
+                "probability": 0.9205054044723511
+            },
+            {
+                "word": " transcending",
+                "start": 96.38,
+                "end": 96.62,
+                "probability": 0.9140089452266693
+            },
+            {
+                "word": " time",
+                "start": 96.62,
+                "end": 97.36,
+                "probability": 0.9841977953910828
+            },
+            {
+                "word": " and",
+                "start": 97.36,
+                "end": 97.38,
+                "probability": 0.9698689579963684
+            },
+            {
+                "word": " space.",
+                "start": 97.38,
+                "end": 98.04,
+                "probability": 0.9973902106285095
+            }
+        ]
+    },
+    {
+        "text": " In  this  long  dream -like  world,  worlds  alive,  Our  savers  feasted  side  by  side,",
+        "start": 98.04,
+        "end": 105.52,
+        "words": [
+            {
+                "word": " In",
+                "start": 98.04,
+                "end": 98.84,
+                "probability": 0.643783450126648
+            },
+            {
+                "word": " this",
+                "start": 98.84,
+                "end": 99.36,
+                "probability": 0.8733770847320557
+            },
+            {
+                "word": " long",
+                "start": 99.36,
+                "end": 99.8,
+                "probability": 0.43638789653778076
+            },
+            {
+                "word": " dream",
+                "start": 99.8,
+                "end": 99.98,
+                "probability": 0.18026085197925568
+            },
+            {
+                "word": "-like",
+                "start": 99.98,
+                "end": 100.2,
+                "probability": 0.49487827718257904
+            },
+            {
+                "word": " world,",
+                "start": 100.2,
+                "end": 100.6,
+                "probability": 0.5767241716384888
+            },
+            {
+                "word": " worlds",
+                "start": 100.88,
+                "end": 101.06,
+                "probability": 0.12589497864246368
+            },
+            {
+                "word": " alive,",
+                "start": 101.06,
+                "end": 102.18,
+                "probability": 0.723209023475647
+            },
+            {
+                "word": " Our",
+                "start": 102.68,
+                "end": 102.82,
+                "probability": 0.016839444637298584
+            },
+            {
+                "word": " savers",
+                "start": 102.82,
+                "end": 103.62,
+                "probability": 0.6365244537591934
+            },
+            {
+                "word": " feasted",
+                "start": 103.62,
+                "end": 104.16,
+                "probability": 0.2243768870830536
+            },
+            {
+                "word": " side",
+                "start": 104.16,
+                "end": 104.58,
+                "probability": 0.9622249603271484
+            },
+            {
+                "word": " by",
+                "start": 104.58,
+                "end": 105.0,
+                "probability": 0.7511213421821594
+            },
+            {
+                "word": " side,",
+                "start": 105.0,
+                "end": 105.52,
+                "probability": 0.9980019927024841
+            }
+        ]
+    },
+    {
+        "text": " From  beyond  the  stars  we  both  come,  To  find  peace  within  the  harm  and  the  harm,",
+        "start": 105.52,
+        "end": 112.98,
+        "words": [
+            {
+                "word": " From",
+                "start": 105.52,
+                "end": 105.8,
+                "probability": 0.7098882794380188
+            },
+            {
+                "word": " beyond",
+                "start": 105.8,
+                "end": 106.28,
+                "probability": 0.8544222116470337
+            },
+            {
+                "word": " the",
+                "start": 106.28,
+                "end": 106.74,
+                "probability": 0.9895362854003906
+            },
+            {
+                "word": " stars",
+                "start": 106.74,
+                "end": 107.26,
+                "probability": 0.993979811668396
+            },
+            {
+                "word": " we",
+                "start": 107.26,
+                "end": 107.6,
+                "probability": 0.6698441505432129
+            },
+            {
+                "word": " both",
+                "start": 107.6,
+                "end": 108.36,
+                "probability": 0.9736111164093018
+            },
+            {
+                "word": " come,",
+                "start": 108.36,
+                "end": 109.18,
+                "probability": 0.9124900698661804
+            },
+            {
+                "word": " To",
+                "start": 109.6,
+                "end": 109.98,
+                "probability": 0.9867908358573914
+            },
+            {
+                "word": " find",
+                "start": 109.98,
+                "end": 110.32,
+                "probability": 0.99588543176651
+            },
+            {
+                "word": " peace",
+                "start": 110.32,
+                "end": 110.8,
+                "probability": 0.9827848076820374
+            },
+            {
+                "word": " within",
+                "start": 110.8,
+                "end": 111.34,
+                "probability": 0.9794919490814209
+            },
+            {
+                "word": " the",
+                "start": 111.34,
+                "end": 111.68,
+                "probability": 0.9401450753211975
+            },
+            {
+                "word": " harm",
+                "start": 111.68,
+                "end": 111.8,
+                "probability": 0.05490494892001152
+            },
+            {
+                "word": " and",
+                "start": 111.8,
+                "end": 112.1,
+                "probability": 0.38628414273262024
+            },
+            {
+                "word": " the",
+                "start": 112.1,
+                "end": 112.46,
+                "probability": 0.9084202647209167
+            },
+            {
+                "word": " harm,",
+                "start": 112.46,
+                "end": 112.98,
+                "probability": 0.29390230774879456
+            }
+        ]
+    },
+    {
+        "text": " It  clips  back,  cheddar,  moons  and  rye,  Across  the  universe  our  sky,",
+        "start": 113.2,
+        "end": 120.14,
+        "words": [
+            {
+                "word": " It",
+                "start": 113.2,
+                "end": 113.4,
+                "probability": 0.00043351281783543527
+            },
+            {
+                "word": " clips",
+                "start": 113.4,
+                "end": 113.7,
+                "probability": 0.6857468485832214
+            },
+            {
+                "word": " back,",
+                "start": 113.7,
+                "end": 114.38,
+                "probability": 0.00027841958217322826
+            },
+            {
+                "word": " cheddar,",
+                "start": 114.64,
+                "end": 115.02,
+                "probability": 3.445034963078797e-05
+            },
+            {
+                "word": " moons",
+                "start": 115.22,
+                "end": 115.6,
+                "probability": 0.4215778708457947
+            },
+            {
+                "word": " and",
+                "start": 115.6,
+                "end": 116.22,
+                "probability": 0.645084023475647
+            },
+            {
+                "word": " rye,",
+                "start": 116.22,
+                "end": 116.74,
+                "probability": 0.8893633186817169
+            },
+            {
+                "word": " Across",
+                "start": 117.1,
+                "end": 117.74,
+                "probability": 0.9662472605705261
+            },
+            {
+                "word": " the",
+                "start": 117.74,
+                "end": 118.2,
+                "probability": 0.9899953603744507
+            },
+            {
+                "word": " universe",
+                "start": 118.2,
+                "end": 119.1,
+                "probability": 0.9477460384368896
+            },
+            {
+                "word": " our",
+                "start": 119.1,
+                "end": 119.54,
+                "probability": 6.459380529122427e-05
+            },
+            {
+                "word": " sky,",
+                "start": 119.54,
+                "end": 120.14,
+                "probability": 0.9220272898674011
+            }
+        ]
+    },
+    {
+        "text": " With  you  a  sandwich  could  suffice,  To  break  the  barrier's  melt,  the  ice.",
+        "start": 120.14,
+        "end": 127.86,
+        "words": [
+            {
+                "word": " With",
+                "start": 120.14,
+                "end": 120.82,
+                "probability": 0.002488271798938513
+            },
+            {
+                "word": " you",
+                "start": 120.82,
+                "end": 121.18,
+                "probability": 0.14510218799114227
+            },
+            {
+                "word": " a",
+                "start": 121.18,
+                "end": 121.64,
+                "probability": 0.3900507688522339
+            },
+            {
+                "word": " sandwich",
+                "start": 121.64,
+                "end": 122.38,
+                "probability": 0.8615401387214661
+            },
+            {
+                "word": " could",
+                "start": 122.38,
+                "end": 123.0,
+                "probability": 0.5269457697868347
+            },
+            {
+                "word": " suffice,",
+                "start": 123.0,
+                "end": 124.18,
+                "probability": 0.9980229437351227
+            },
+            {
+                "word": " To",
+                "start": 124.22,
+                "end": 124.46,
+                "probability": 0.8473226428031921
+            },
+            {
+                "word": " break",
+                "start": 124.46,
+                "end": 124.82,
+                "probability": 0.9734346270561218
+            },
+            {
+                "word": " the",
+                "start": 124.82,
+                "end": 125.36,
+                "probability": 0.8588155508041382
+            },
+            {
+                "word": " barrier's",
+                "start": 125.36,
+                "end": 126.4,
+                "probability": 0.7343612909317017
+            },
+            {
+                "word": " melt,",
+                "start": 126.4,
+                "end": 126.72,
+                "probability": 0.5918472409248352
+            },
+            {
+                "word": " the",
+                "start": 127.12,
+                "end": 127.12,
+                "probability": 0.7858090996742249
+            },
+            {
+                "word": " ice.",
+                "start": 127.12,
+                "end": 127.86,
+                "probability": 0.6737167239189148
+            }
+        ]
+    }
+]

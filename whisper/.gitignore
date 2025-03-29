@@ -1,0 +1,38 @@
+# Python specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Miscellaneous
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old
+*.orig
+*.rej
+*.sublime-workspace
+*.sublime-project
+
+pretrained_models/
+
