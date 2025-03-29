@@ -88,6 +88,16 @@ A project focused on creating an interactive visual novel experience using gener
 - Integration with visual and audio elements
 - Interactive branching narratives
 
+### 🎤 Whisper Karaoke Project
+**Location:** `/whisper`
+
+A project that uses OpenAI's Whisper model and other tools to create karaoke videos with synchronized lyrics.
+
+- Extract vocals and accompaniment from audio files using Spleeter
+- Transcribe lyrics with word-level timestamps using Whisper
+- Generate karaoke videos with synchronized lyrics and highlighted words
+- Tools: Whisper, Spleeter, MoviePy, Pillow, FFmpeg
+
 ## Getting Started
 
 Each project has its own README with specific setup instructions. Navigate to the project directory of interest and follow the instructions provided.
